@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Worker : AI {
+public class AI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

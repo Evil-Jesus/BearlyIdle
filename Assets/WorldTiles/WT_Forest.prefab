@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013624902022}
-  - 114: {fileID: 114000010166434466}
   - 212: {fileID: 212000011556730856}
+  - 114: {fileID: 114000014060936470}
   m_Layer: 0
   m_Name: WT_Forest
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000010166434466
+--- !u!114 &114000014060936470
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,12 +49,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013247879868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72de3aee0a71f0418560555cc8bc90d, type: 3}
+  m_Script: {fileID: 11500000, guid: c2d13981b6dd2c349af00bb96bbecf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileName: Forest
-  chanceToPlace: 0.2
   spr: {fileID: 0}
+  tileJob: {fileID: 0}
 --- !u!212 &212000011556730856
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Job : MonoBehaviour {
 
-	bool active = false;
+	bool hasWorker = false;
 
 	// Use this for initialization
 	void Start () {

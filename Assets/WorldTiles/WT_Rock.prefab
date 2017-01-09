@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013312468902}
-  - 114: {fileID: 114000011175521916}
   - 212: {fileID: 212000012379119268}
+  - 114: {fileID: 114000012073907386}
   m_Layer: 0
   m_Name: WT_Rock
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000011175521916
+--- !u!114 &114000012073907386
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013485295466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72de3aee0a71f0418560555cc8bc90d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5934fe4ea9258104d9b8cc69d450fa4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileName: Rock

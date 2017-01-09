@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Worker : AI {
+public class WT_Forest : WorldTile {
 
 	// Use this for initialization
 	void Start () {

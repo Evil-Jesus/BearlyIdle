@@ -4,9 +4,9 @@ using System.Collections;
 public class WorldTile : MonoBehaviour {
 
 	public string tileName = "tileName";
-	public float chanceToPlace = 0;
 
 	public SpriteRenderer spr = null;
+	public Job tileJob = null;
 
 	// Use this for initialization
 	void Start () {

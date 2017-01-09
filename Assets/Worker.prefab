@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010037284264}
   - 212: {fileID: 212000013296819058}
-  - 114: {fileID: 114000013369015744}
+  - 114: {fileID: 114000012793179912}
   m_Layer: 0
   m_Name: Worker
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000013369015744
+--- !u!114 &114000012793179912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,14 +49,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014041818756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82332feed867c6e42b7bb8d029ea2352, type: 3}
+  m_Script: {fileID: 11500000, guid: 7585e554894415a4f9b00329cb0a5217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileX: 0
-  tileY: 0
-  target: {x: 0, y: 0}
-  state: idle
-  Energy: 100
 --- !u!212 &212000013296819058
 SpriteRenderer:
   m_ObjectHideFlags: 1
