@@ -1,23 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿ using UnityEngine;
+ using System.Collections;
+ 
+ // Attach to orthographic camera with rotation (0,0,0)
+ public class CameraDrag : MonoBehaviour {
+ 
+     private Vector3 startMousePos;
+ 
+     void Update() {
 
-public class CameraDrag : MonoBehaviour {
-	public float dragSpeed = 2;
-	private Vector3 dragOrigin;
-
-	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-			dragOrigin = Input.mousePosition;
-			return;
+			startMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			startMousePos.z = 0.0f;
+		}
+ 
+		if (Input.GetMouseButton (0)) {
+			Vector3 nowMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			nowMousePos.z = 0.0f;
+			transform.position += startMousePos - nowMousePos;
 		}
 
-		if (!Input.GetMouseButton (0)) {
-			return;
-		}
-			
-		Vector3 pos = Camera.main.ScreenToViewportPoint (Input.mousePosition - dragOrigin);
-		Vector3 move = new Vector3 (pos.x * dragSpeed, pos.y * dragSpeed, 0);
-
-		transform.Translate (pos, Space.World);
 	}
-}
+ }

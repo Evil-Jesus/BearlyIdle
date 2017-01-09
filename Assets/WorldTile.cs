@@ -6,7 +6,6 @@ public class WorldTile : MonoBehaviour {
 	public string tileName = "tileName";
 
 	public SpriteRenderer spr = null;
-	public Job tileJob = null;
 
 	// Use this for initialization
 	void Start () {
