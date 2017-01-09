@@ -1,2 +1,4 @@
 # BearlyIdle
-resorce management game with a bear theme.
+Resorce management game with a bear theme.
+The game is intended for Kongregate. 
+
