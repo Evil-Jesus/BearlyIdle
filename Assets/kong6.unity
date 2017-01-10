@@ -129,6 +129,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013512460240, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: Jobs.Array.data[0]
+      value: 
+      objectReference: {fileID: 114000012826350016, guid: 391e1ffd35346e649908ffb306757f48,
+        type: 2}
+    - target: {fileID: 1000013844208964, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
   m_IsPrefabParent: 0

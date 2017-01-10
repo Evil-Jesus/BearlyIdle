@@ -4,12 +4,20 @@ using System.Collections.Generic;
 
 public class MenuController : MonoBehaviour {
 
-	public static Job selectedJob; //This is the job that will be attempted placed when clicking tiles
+	public Job selectedJob; //This is the job that will be attempted placed when clicking tiles
 
-	public List<GameObject> Menus;
+	public List<GameObject> menusT1;
+	public List<GameObject> menusT2;
+
+	public List<Job> Jobs;
 
 	public void closeAll(){
-		foreach (GameObject curMenu in Menus) {
+		
+		foreach (GameObject curMenu in menusT1) {
+			curMenu.SetActive (false);
+		}
+
+		foreach (GameObject curMenu in menusT2) {
 			curMenu.SetActive (false);
 		}
 	}
@@ -19,6 +27,14 @@ public class MenuController : MonoBehaviour {
 			bool newActive = !menu.activeSelf; // Invert active state.
 			closeAll();
 			menu.SetActive (newActive);
+		}
+	}
+
+	public void setSelectedJob (string newJob){
+		foreach (Job curJob in Jobs) {
+			if (curJob.GetType ().Name == newJob) {
+				selectedJob = curJob;
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WorldMaster : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class WorldMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Ref.WM = this;
 		genMap (10, 10);
 	}
 	
@@ -32,8 +34,24 @@ public class WorldMaster : MonoBehaviour {
 				GameObject newTile = Instantiate (WorldTilePrefabs [newIndex], newPos, Quaternion.identity) as GameObject;
 				newTile.transform.SetParent (transform);
 				WorldTile curWT = newTile.GetComponent<WorldTile> ();
+				curWT.posX = x;
+				curWT.posY = y;
 				WorldTiles [x, y] = curWT;
 			}
 		}
 	}
+
+	/* Not working. the problem lies in "Ref.MC.selectedJob.acceptedTiles", It says referance is not found.
+	public void placeJob (int x, int y){
+		
+		foreach (WorldTile curWT in Ref.MC.selectedJob.acceptedTiles) {
+			
+			if (curWT.GetType () == WorldTiles [x, y].GetType ()) {
+				if (!WorldTiles [x, y].hasJob) {
+					WorldTiles [x, y].gameObject.AddComponent (Ref.MC.selectedJob.GetType ());
+				}
+			}
+		}
+	}
+	*/
 }
