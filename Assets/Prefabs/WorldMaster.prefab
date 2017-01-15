@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010564076064}
   - 114: {fileID: 114000011515209714}
+  - 114: {fileID: 114000012822293688}
   m_Layer: 0
   m_Name: WorldMaster
   m_TagString: Untagged
@@ -55,3 +56,17 @@ MonoBehaviour:
   - {fileID: 1000013860332844, guid: 84ef769259336c04c9c64932a3e372f0, type: 2}
   - {fileID: 1000013485295466, guid: 59a0734a3eb31af4ea49326fbdb00509, type: 2}
   - {fileID: 1000013247879868, guid: 2ad8e30d6041b4045b677c5b45e6d20d, type: 2}
+  workerPrefab: {fileID: 1000014041818756, guid: eb9da25318787b34fbb5bc1ae886da5d,
+    type: 2}
+  WorldJobs: []
+--- !u!114 &114000012822293688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012660754330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfae16cdd9cd4c4bad882a7a010e015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

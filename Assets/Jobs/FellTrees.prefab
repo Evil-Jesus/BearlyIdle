@@ -53,3 +53,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptedKeys:
   - Forest
+  wt: {fileID: 0}
+  needWorker: 1
+  assignedWorker: {fileID: 0}
+  progress: 0
+  targetProgress: 100
+  statScale: {x: 1, y: 1, z: 1}
+  replaceingWorldTile: {fileID: 1000013860332844, guid: 84ef769259336c04c9c64932a3e372f0,
+    type: 2}

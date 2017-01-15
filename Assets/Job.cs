@@ -7,7 +7,23 @@ public class Job : MonoBehaviour {
 	public List<string> acceptedKeys;
 	public WorldTile wt;
 
-	public void delJob (){
+	public bool needWorker = true;
+	public Worker assignedWorker;
+
+	public float progress = 0;
+	public float targetProgress = 100;
+	public Vector3 statScale = new Vector3 (1.0f, 1.0f, 1.0f);  // progress points per stat point scale ( Str, Agi, Int )
+
+	public virtual void delJob (){
 		GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Remove (this);
+		assignedWorker.setState ("idle");
+		Destroy (gameObject);
+	}
+
+	public virtual void doJob (){
+		//add progress
+		progress += assignedWorker.baseStats.x * statScale.x;
+		progress += assignedWorker.baseStats.y * statScale.y;
+		progress += assignedWorker.baseStats.z * statScale.z;
 	}
 }

@@ -52,6 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac9516844d323d48914486a29784b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: idle
+  target: {fileID: 0}
+  baseStats: {x: 5, y: 5, z: 3}
+  acceptedStates:
+  - idle
+  - moving
+  - working
 --- !u!212 &212000013296819058
 SpriteRenderer:
   m_ObjectHideFlags: 1

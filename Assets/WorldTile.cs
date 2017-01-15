@@ -3,21 +3,21 @@ using System.Collections;
 
 public class WorldTile : MonoBehaviour {
 
-	public bool hasJob = false;
 	public int posX;
 	public int posY;
 
 	public string tileName = "tileName";
 
-	public SpriteRenderer spr = null;
-
 	// Use this for initialization
 	void Start () {
-			spr = GetComponent<SpriteRenderer> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	public void changeTile (GameObject newTileGo){
+		WorldTile newWt = newTileGo.GetComponent<WorldTile> ();
+		SpriteRenderer newSpr = newTileGo.GetComponent<SpriteRenderer> ();
+
+		tileName = newWt.tileName;
+		GetComponent<SpriteRenderer> ().sprite = newSpr.sprite;
 
 	}
 

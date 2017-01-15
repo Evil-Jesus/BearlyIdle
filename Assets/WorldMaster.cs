@@ -5,19 +5,28 @@ using System.Collections.Generic;
 public class WorldMaster : MonoBehaviour {
 
 	public GameObject[] WorldTilePrefabs;
+	public GameObject workerPrefab;
 
 	public WorldTile[,] WorldTiles;
 
 	public List<Job> WorldJobs;
+	public List<Worker> workers;
 
 	// Use this for initialization
 	void Start () {
 		genMap (10, 10);
+		Worker.wm = this;
+		InvokeRepeating ("tick", 0.0f, 1.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void tick(){
+		foreach (Worker curWorker in workers) {
+			curWorker.tick ();
+		}
+	}
+
+	public void addWorker (){
+		Instantiate (workerPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
 	}
 
 	//Generate A New Map  |  insert x/y size of new map
