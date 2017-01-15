@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorldTilePrefabs:
   - {fileID: 1000013860332844, guid: 84ef769259336c04c9c64932a3e372f0, type: 2}
-  - {fileID: 1000013247879868, guid: 2ad8e30d6041b4045b677c5b45e6d20d, type: 2}
   - {fileID: 1000013485295466, guid: 59a0734a3eb31af4ea49326fbdb00509, type: 2}
+  - {fileID: 1000013247879868, guid: 2ad8e30d6041b4045b677c5b45e6d20d, type: 2}

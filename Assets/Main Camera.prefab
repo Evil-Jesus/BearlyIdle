@@ -307,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000014067932662
 GameObject:
   m_ObjectHideFlags: 1
@@ -1174,11 +1174,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedJob: {fileID: 0}
   menusT1:
-  - {fileID: 1000013291345858}
-  - {fileID: 1000013633558172}
+  - {fileID: 0}
+  - {fileID: 0}
   menusT2: []
   Jobs:
-  - {fileID: 0}
+  - {fileID: 114000012826350016, guid: 391e1ffd35346e649908ffb306757f48, type: 2}
 --- !u!114 &114000013577426740
 MonoBehaviour:
   m_ObjectHideFlags: 1

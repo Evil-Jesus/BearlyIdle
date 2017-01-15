@@ -21,7 +21,22 @@ public class WorldTile : MonoBehaviour {
 
 	}
 
-	public void OnMouseDown(){
-		Ref.WM.placeJob (posX, posY);
+	void OnMouseDown(){
+		placeJob ();
+	}
+
+	public void placeJob (){
+		if (MenuController.selectedJob != null) {
+			foreach (string curKey in MenuController.selectedJob.GetComponent<Job>().acceptedKeys) {
+				if (curKey == tileName) {
+					if (transform.childCount == 0) {
+						GameObject newJob = Instantiate (MenuController.selectedJob, transform.position, Quaternion.identity) as GameObject;
+						newJob.transform.SetParent (transform);
+						newJob.GetComponent<Job> ().wt = this;
+						GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Add (newJob.GetComponent<Job> ());
+					}
+				}
+			}
+		}
 	}
 }

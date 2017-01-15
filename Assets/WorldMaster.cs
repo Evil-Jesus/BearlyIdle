@@ -8,9 +8,10 @@ public class WorldMaster : MonoBehaviour {
 
 	public WorldTile[,] WorldTiles;
 
+	public List<Job> WorldJobs;
+
 	// Use this for initialization
 	void Start () {
-		Ref.WM = this;
 		genMap (10, 10);
 	}
 	
@@ -40,18 +41,4 @@ public class WorldMaster : MonoBehaviour {
 			}
 		}
 	}
-
-	/* Not working. the problem lies in "Ref.MC.selectedJob.acceptedTiles", It says referance is not found.
-	public void placeJob (int x, int y){
-		
-		foreach (WorldTile curWT in Ref.MC.selectedJob.acceptedTiles) {
-			
-			if (curWT.GetType () == WorldTiles [x, y].GetType ()) {
-				if (!WorldTiles [x, y].hasJob) {
-					WorldTiles [x, y].gameObject.AddComponent (Ref.MC.selectedJob.GetType ());
-				}
-			}
-		}
-	}
-	*/
 }

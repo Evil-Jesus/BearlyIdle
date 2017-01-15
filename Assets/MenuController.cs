@@ -4,12 +4,17 @@ using System.Collections.Generic;
 
 public class MenuController : MonoBehaviour {
 
-	public Job selectedJob; //This is the job that will be attempted placed when clicking tiles
-
 	public List<GameObject> menusT1;
 	public List<GameObject> menusT2;
 
 	public List<Job> Jobs;
+	public static GameObject selectedJob;
+
+	public void Update (){
+		if (Input.GetMouseButtonDown (1)) {
+			selectedJob = null;
+		}
+	}
 
 	public void closeAll(){
 		
@@ -30,11 +35,7 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
-	public void setSelectedJob (string newJob){
-		foreach (Job curJob in Jobs) {
-			if (curJob.GetType ().Name == newJob) {
-				selectedJob = curJob;
-			}
-		}
+	public void setSelectedJob (GameObject newJob){
+		selectedJob = newJob;
 	}
 }

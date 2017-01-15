@@ -4,15 +4,10 @@ using System.Collections.Generic;
 
 public class Job : MonoBehaviour {
 
-	public List<WorldTile> acceptedTiles;
+	public List<string> acceptedKeys;
+	public WorldTile wt;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void delJob (){
+		GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Remove (this);
 	}
 }

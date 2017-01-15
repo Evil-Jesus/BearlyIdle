@@ -90,6 +90,11 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &368453982 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013291345858, guid: e3f525e04c14ade47ba5b3ae4532741f,
+    type: 2}
+  m_PrefabInternal: {fileID: 512769195}
 --- !u!1001 &512769195
 Prefab:
   m_ObjectHideFlags: 0
@@ -131,15 +136,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000013512460240, guid: e3f525e04c14ade47ba5b3ae4532741f,
         type: 2}
-      propertyPath: Jobs.Array.data[0]
+      propertyPath: menusT1.Array.data[0]
       value: 
-      objectReference: {fileID: 114000012826350016, guid: 391e1ffd35346e649908ffb306757f48,
+      objectReference: {fileID: 368453982}
+    - target: {fileID: 114000013512460240, guid: e3f525e04c14ade47ba5b3ae4532741f,
         type: 2}
-    - target: {fileID: 1000013844208964, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
+      propertyPath: menusT1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1203658568}
+    - target: {fileID: 1000013291345858, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 20000012391816888, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: far clip plane
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000013323610186, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: m_PlaneDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010403036260, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010403036260, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010403036260, guid: e3f525e04c14ade47ba5b3ae4532741f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1000010359192844, guid: eadc3d4cee6d3f241ba4e301c94e179f,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114000011647755988, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e3f525e04c14ade47ba5b3ae4532741f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &946632167
@@ -184,3 +220,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efa2be1ff40fced428925a093bab7410, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1203658568 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013633558172, guid: e3f525e04c14ade47ba5b3ae4532741f,
+    type: 2}
+  m_PrefabInternal: {fileID: 512769195}

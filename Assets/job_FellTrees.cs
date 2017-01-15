@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class J_FellTree : Job {
+public class job_FellTrees : Job {
 
 	// Use this for initialization
 	void Start () {
