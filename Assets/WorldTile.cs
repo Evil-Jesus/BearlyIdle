@@ -34,6 +34,7 @@ public class WorldTile : MonoBehaviour {
 						newJob.transform.SetParent (transform);
 						newJob.GetComponent<Job> ().wt = this;
 						GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Add (newJob.GetComponent<Job> ());
+						newJob.GetComponent<Job> ().spr = newJob.GetComponent<SpriteRenderer> ();
 					}
 				}
 			}

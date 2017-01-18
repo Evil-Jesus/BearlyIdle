@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class WorldMaster : MonoBehaviour {
 
+	public static bool debug = true;
+
 	public GameObject[] WorldTilePrefabs;
 	public GameObject workerPrefab;
 
@@ -14,14 +16,23 @@ public class WorldMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		genMap (10, 10);
+		genMap (50, 50);
 		Worker.wm = this;
-		InvokeRepeating ("tick", 0.0f, 1.0f);
+		InvokeRepeating ("tick", 0.0f, 0.5f);
 	}
 
 	public void tick(){
+		//Trigger all workers
 		foreach (Worker curWorker in workers) {
 			curWorker.tick ();
+		}
+
+		//Trigger all self sustained jobs
+		foreach (Job curJob in WorldJobs) {
+			if (curJob.needWorker == false) {
+				curJob.doJob ();
+			}
+			curJob.jobOverlayTick ();
 		}
 	}
 

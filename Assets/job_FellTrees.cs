@@ -12,6 +12,8 @@ public class job_FellTrees : Job {
 
 		if (progress >= targetProgress) {
 			GetComponentInParent<WorldTile> ().changeTile (replaceingWorldTile);
+			Inventory.noOakLogs += Random.Range (1, 3);
+			Inventory.noOakSaplings += Random.Range (0, 5);
 			base.delJob ();
 		}
 	}
