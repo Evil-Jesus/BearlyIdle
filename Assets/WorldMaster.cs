@@ -22,17 +22,17 @@ public class WorldMaster : MonoBehaviour {
 	}
 
 	public void tick(){
-		//Trigger all workers
-		foreach (Worker curWorker in workers) {
-			curWorker.tick ();
-		}
 
 		//Trigger all self sustained jobs
 		foreach (Job curJob in WorldJobs) {
 			if (curJob.needWorker == false) {
 				curJob.doJob ();
 			}
-			//curJob.jobOverlayTick (); 
+		}
+
+		//Trigger all workers
+		foreach (Worker curWorker in workers) {
+			curWorker.tick ();
 		}
 	}
 

@@ -22,29 +22,26 @@ public class Job : MonoBehaviour {
 
 	public virtual void delJob (){
 		GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Remove (this);
-		assignedWorker.setState ("idle");
+		if (needWorker) {
+			assignedWorker.setState ("idle");
+		}
 		Destroy (gameObject);
 	}
 
-	//if there is anything that needs to be given back
-	//to the player when canceling the job this is the one to override
-	public virtual void cancelJob(){
-		delJob ();
-	}
-
 	public virtual void doJob (){
-		//add progress
-		progress += assignedWorker.baseStats.x * statScale.x;
-		progress += assignedWorker.baseStats.y * statScale.y;
-		progress += assignedWorker.baseStats.z * statScale.z;
+
+		if (needWorker) {
+			//add progress
+			progress += assignedWorker.baseStats.x * statScale.x;
+			progress += assignedWorker.baseStats.y * statScale.y;
+			progress += assignedWorker.baseStats.z * statScale.z;
+		}
 	}
 
 	//Visulizes if the job is being taken care of or not.
 	public void jobOverlayTick(){
 		if (spr != null) {
-			if (!needWorker) {
-				spr.enabled = false;
-			} else {
+			if (needWorker) {
 				if (assignedWorker != null) {
 					spr.color = new Color (0f, 0.8f, 0f, 0.5f);
 				} else {

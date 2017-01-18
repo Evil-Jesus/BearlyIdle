@@ -7,6 +7,7 @@ public class job_FellTrees : Job {
 
 	public override void doJob(){
 		base.doJob ();
+
 		//add code for tool checking here
 		//apply additional progress bonus based on tool
 
