@@ -32,7 +32,7 @@ public class WorldMaster : MonoBehaviour {
 			if (curJob.needWorker == false) {
 				curJob.doJob ();
 			}
-			curJob.jobOverlayTick ();
+			//curJob.jobOverlayTick (); 
 		}
 	}
 

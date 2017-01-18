@@ -39,6 +39,7 @@ public class Job : MonoBehaviour {
 		progress += assignedWorker.baseStats.z * statScale.z;
 	}
 
+	//Visulizes if the job is being taken care of or not.
 	public void jobOverlayTick(){
 		if (spr != null) {
 			if (!needWorker) {
