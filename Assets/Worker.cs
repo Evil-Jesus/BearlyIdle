@@ -122,11 +122,13 @@ public class Worker : MonoBehaviour {
 	public void findJob (){
 		foreach (Job curJob in wm.WorldJobs) {
 			if (curJob.needWorker == true) {
-				if (curJob.assignedWorker == null) {
-					curJob.assignedWorker = this;
-					target = curJob.gameObject;
-					return;
-				}	
+				if (curJob.canDoJob == true) {
+					if (curJob.assignedWorker == null) {
+						curJob.assignedWorker = this;
+						target = curJob.gameObject;
+						return;
+					}	
+				}
 			}
 		}
 	}

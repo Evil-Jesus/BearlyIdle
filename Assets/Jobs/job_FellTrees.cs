@@ -12,9 +12,12 @@ public class job_FellTrees : Job {
 		//apply additional progress bonus based on tool
 
 		if (progress >= targetProgress) {
-			GetComponentInParent<WorldTile> ().changeTile (replaceingWorldTile);
 			Inventory.noOakLogs += Random.Range (1, 3);
 			Inventory.noOakSaplings += Random.Range (0, 5);
+
+			Destroy (GetComponentInParent<WorldTile> ());
+			WorldTile newWT = transform.parent.gameObject.AddComponent<WT_Planes> ();
+			newWT.changeTile (replaceingWorldTile);
 			base.delJob ();
 		}
 	}

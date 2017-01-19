@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MenuController : MonoBehaviour {
 
+	public static bool delMode = false;
+
 	public List<GameObject> menusT1;
 	public List<GameObject> menusT2;
 
@@ -12,8 +14,16 @@ public class MenuController : MonoBehaviour {
 
 	public void Update (){
 		if (Input.GetMouseButtonDown (1)) {
+			delMode = false;
 			selectedJob = null;
+			closeAll ();
 		}
+	}
+
+	public void setDelMode(){
+		delMode = true;
+		selectedJob = null;
+		closeAll ();
 	}
 
 	public void closeAll(){

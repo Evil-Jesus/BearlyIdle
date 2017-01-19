@@ -9,7 +9,10 @@ public class WorldTile : MonoBehaviour {
 	public string tileName = "tileName";
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
+		posX = Mathf.RoundToInt (transform.position.x);
+		posY = Mathf.RoundToInt (transform.position.y);
+		GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldTiles [posX, posY] = this;
 	}
 
 	public void changeTile (GameObject newTileGo){
@@ -18,7 +21,6 @@ public class WorldTile : MonoBehaviour {
 
 		tileName = newWt.tileName;
 		GetComponent<SpriteRenderer> ().sprite = newSpr.sprite;
-
 	}
 
 	void OnMouseDown(){
@@ -26,16 +28,22 @@ public class WorldTile : MonoBehaviour {
 	}
 
 	public void placeJob (bool force){
-		if (MenuController.selectedJob != null) {
-			foreach (string curKey in MenuController.selectedJob.GetComponent<Job>().acceptedKeys) {
-				if (curKey == tileName) {
-					if (transform.childCount == 0 || force) {
-						GameObject newJob = Instantiate (MenuController.selectedJob, transform.position, Quaternion.identity) as GameObject;
-						newJob.transform.SetParent (transform);
-						newJob.GetComponent<Job> ().wt = this;
-						GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Add (newJob.GetComponent<Job> ());
+		if (!MenuController.delMode) {
+			if (MenuController.selectedJob != null) {
+				foreach (string curKey in MenuController.selectedJob.GetComponent<Job>().acceptedKeys) {
+					if (curKey == tileName) {
+						if (transform.childCount == 0 || force) {
+							GameObject newJob = Instantiate (MenuController.selectedJob, transform.position, Quaternion.identity) as GameObject;
+							newJob.transform.SetParent (transform);
+							newJob.GetComponent<Job> ().wt = this;
+							GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Add (newJob.GetComponent<Job> ());
+						}
 					}
 				}
+			}
+		} else {
+			if (GetComponentInChildren<Job> () != null) {
+				GetComponentInChildren<Job> ().delJob ();
 			}
 		}
 	}

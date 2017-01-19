@@ -67,11 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5934fe4ea9258104d9b8cc69d450fa4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasJob: 0
   posX: 0
   posY: 0
   tileName: Rock
-  spr: {fileID: 0}
+  quantity: 3
 --- !u!212 &212000012379119268
 SpriteRenderer:
   m_ObjectHideFlags: 1

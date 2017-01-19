@@ -61,6 +61,8 @@ MonoBehaviour:
   targetProgress: 120
   statScale: {x: 1, y: 1, z: 1}
   spr: {fileID: 212000013893470692}
+  replacingWorldTile: {fileID: 1000013247879868, guid: 2ad8e30d6041b4045b677c5b45e6d20d,
+    type: 2}
 --- !u!212 &212000013893470692
 SpriteRenderer:
   m_ObjectHideFlags: 1

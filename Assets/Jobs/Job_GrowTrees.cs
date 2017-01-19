@@ -9,7 +9,9 @@ public class Job_GrowTrees : Job {
 		progress += 5;
 
 		if (progress >= targetProgress) {
-			GetComponentInParent<WorldTile> ().changeTile (replacingWorldTile);
+			Destroy (GetComponentInParent<WorldTile> ());
+			WorldTile newWT = transform.parent.gameObject.AddComponent<WT_Planes> ();
+			newWT.changeTile (replacingWorldTile);
 			Invoke ("delJob", 0f); //Why do I need to invoke this?
 		}
 	}

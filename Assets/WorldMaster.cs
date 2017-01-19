@@ -60,5 +60,8 @@ public class WorldMaster : MonoBehaviour {
 				WorldTiles [x, y] = curWT;
 			}
 		}
+
+		GameObject middleTile = WorldTiles [Mathf.RoundToInt (genX / 2), Mathf.RoundToInt (genY / 2)].gameObject;
+		GameObject.Find ("Main Camera").transform.position = middleTile.transform.position + new Vector3 (0, 0, -10);
 	}
 }

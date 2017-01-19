@@ -1,12 +1,13 @@
-﻿ using UnityEngine;
- using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
  
- // Attach to orthographic camera with rotation (0,0,0)
- public class CameraDrag : MonoBehaviour {
+// Attach to orthographic camera with rotation (0,0,0)
+public class CameraDrag : MonoBehaviour {
  
-     private Vector3 startMousePos;
+    private Vector3 startMousePos;
+	public Camera cam = null;
  
-     void Update() {
+    void Update() {
 
 		if (Input.GetMouseButtonDown (0)) {
 			startMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
@@ -19,5 +20,16 @@
 			transform.position += startMousePos - nowMousePos;
 		}
 
+		if (Input.mouseScrollDelta.y != 0) {
+			cam.orthographicSize -= Input.mouseScrollDelta.y;
+		}
+
+		if (cam.orthographicSize > 12) {
+			cam.orthographicSize = 12;
+		}
+
+		if (cam.orthographicSize < 4) {
+			cam.orthographicSize = 4;
+		}
 	}
- }
+}

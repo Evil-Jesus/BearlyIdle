@@ -3,9 +3,10 @@ using System.Collections;
 
 public class WT_Rocks : WorldTile {
 
-	// Use this for initialization
-	void Start () {
-	
+	public int quantity = 100;
+
+	public override void Start (){
+		base.Start ();
 	}
 	
 	// Update is called once per frame

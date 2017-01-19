@@ -7,6 +7,7 @@ public class Job : MonoBehaviour {
 	public List<string> acceptedKeys;
 	public WorldTile wt;
 
+	public bool canDoJob = true;
 	public bool needWorker = true;
 	public Worker assignedWorker;
 
@@ -23,7 +24,9 @@ public class Job : MonoBehaviour {
 	public virtual void delJob (){
 		GameObject.Find ("WorldMaster").GetComponent<WorldMaster> ().WorldJobs.Remove (this);
 		if (needWorker) {
-			assignedWorker.setState ("idle");
+			if (assignedWorker != null) {
+				assignedWorker.setState ("idle");
+			}
 		}
 		Destroy (gameObject);
 	}
@@ -39,7 +42,7 @@ public class Job : MonoBehaviour {
 	}
 
 	//Visulizes if the job is being taken care of or not.
-	public void jobOverlayTick(){
+	public virtual void jobOverlayTick(){
 		if (spr != null) {
 			if (needWorker) {
 				if (assignedWorker != null) {
@@ -50,6 +53,14 @@ public class Job : MonoBehaviour {
 			}
 		} else {
 			print ("spr(SpriteRenderer) is not valid at " + this);
+		}
+	}
+
+	public void fireWorker(){
+		if (assignedWorker != null) {
+			assignedWorker.setState ("idle");
+			assignedWorker.target = null;
+			assignedWorker = null;
 		}
 	}
 }
