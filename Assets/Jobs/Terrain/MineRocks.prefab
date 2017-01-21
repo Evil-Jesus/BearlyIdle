@@ -55,6 +55,7 @@ MonoBehaviour:
   acceptedKeys:
   - Rock
   wt: {fileID: 0}
+  mc: {fileID: 114000010721968502, guid: 95bc9c6afffe4a04fb6384ed300da8a8, type: 2}
   canDoJob: 1
   needWorker: 1
   assignedWorker: {fileID: 0}

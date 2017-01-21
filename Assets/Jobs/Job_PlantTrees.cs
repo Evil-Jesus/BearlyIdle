@@ -1,35 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Job_PlantTrees : Job {
+public class Job_PlantTrees : Job
+{
 
-	public GameObject growTreePrefab = null;
+    public GameObject growTreePrefab = null;
 
-	public override void doJob (){
-		base.doJob ();
+    public override void doJob()
+    {
+        base.doJob();
 
-		//add code for tool checking here
-		//apply additional progress bonus based on tool
+        //add code for tool checking here
+        //apply additional progress bonus based on tool
 
-		if (progress >= targetProgress) {
-			if (Inventory.noOakSaplings >= 1) {
-				Inventory.noOakSaplings -= 1;
+        if (progress >= targetProgress)
+        {
+            if (Inventory.noOakSaplings >= 1)
+            {
+                Inventory.noOakSaplings -= 1;
 
-				MenuController.selectedJob = growTreePrefab;
-				transform.parent.GetComponent<WorldTile> ().placeJob (true);
-				base.delJob ();
-			}
-		}
-	}
+                MenuController.selectedJob = growTreePrefab;
+                transform.parent.GetComponent<WorldTile>().placeJob(true);
+                base.delJob();
+            }
+        }
+    }
 
-	public override void jobOverlayTick (){
-		base.jobOverlayTick ();
+    public override void jobOverlayTick()
+    {
+        base.jobOverlayTick();
 
-		if (Inventory.noOakSaplings >= 1) {
-			canDoJob = true;
-		} else {
-			canDoJob = false;
-			fireWorker ();
-		}
-	}
+        if (Inventory.noOakSaplings >= 1)
+        {
+            canDoJob = true;
+        }
+        else {
+            canDoJob = false;
+            fireWorker();
+        }
+    }
 }
