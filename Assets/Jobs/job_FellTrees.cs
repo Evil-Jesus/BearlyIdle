@@ -24,7 +24,6 @@ public class job_FellTrees : Job
 
             string msg = "+" + rnd1 + " Log | +" + rnd2 + " Sapling";
 
-            //mc.popOver (msg, transform.position);
             Destroy(GetComponentInParent<WorldTile>());
             WorldTile newWT = transform.parent.gameObject.AddComponent<WT_Planes>();
             newWT.changeTile(replaceingWorldTile);

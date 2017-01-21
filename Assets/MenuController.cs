@@ -59,32 +59,4 @@ public class MenuController : MonoBehaviour
     {
         selectedJob = newJob;
     }
-
-
-    [SerializeField]
-    private Text popUpText = null;
-
-    public List<popUp> popUps;
-
-    public void addPopUp(string msg, int dur)
-    {
-        popUp newPop = new popUp();
-        newPop.msg = msg;
-        newPop.dur = dur;
-        popUps.Add(newPop);
-    }
-
-    public void nextPopUp()
-    {
-        if (popUps.Count > 0)
-        {
-            popUpText.gameObject.SetActive(true);
-            popUpText.text = popUps[0].msg;
-            popUpText.rectTransform.position = popUps[0].pos;
-            Invoke("nextPopUp", popUps[0].dur);
-        }
-        else {
-            popUpText.gameObject.SetActive(false);
-        }
-    }
 }

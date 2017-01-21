@@ -7,7 +7,6 @@ public class Job : MonoBehaviour
 
     public List<string> acceptedKeys;
     public WorldTile wt = null;
-    public MenuController mc = null;
 
     public bool canDoJob = true;
     public bool needWorker = true;
