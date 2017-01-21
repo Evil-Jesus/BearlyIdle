@@ -30,6 +30,7 @@ public class Job_PlantTrees : Job
     {
         base.jobOverlayTick();
 
+        //checks if job can be done
         if (Inventory.noOakSaplings >= 1)
         {
             canDoJob = true;

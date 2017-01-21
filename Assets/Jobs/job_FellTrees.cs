@@ -22,12 +22,10 @@ public class job_FellTrees : Job
             Inventory.noOakLogs += rnd1;
             Inventory.noOakSaplings += rnd2;
 
-            string msg = "+" + rnd1 + " Log | +" + rnd2 + " Sapling";
-
             Destroy(GetComponentInParent<WorldTile>());
             WorldTile newWT = transform.parent.gameObject.AddComponent<WT_Planes>();
             newWT.changeTile(replaceingWorldTile);
-            base.delJob();
+            delJob();
         }
     }
 }

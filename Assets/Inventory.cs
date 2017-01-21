@@ -16,6 +16,14 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private int debug_noRocks = 0;
 
+    public static int noSeedsWheat = 2;
+    [SerializeField]
+    private int debug_noSeedsWheat = 0;
+
+    public static int noWheat = 0;
+    [SerializeField]
+    private int debug_noWheat = 0;
+
     // Use this for initialization
     void Start()
     {
